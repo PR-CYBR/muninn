@@ -1,0 +1,51 @@
+{
+  "collection_date": "2025-10-31T12:00:00Z",
+  "collection_id": "huginn_sample_001",
+  "sources": [
+    {
+      "type": "web",
+      "url": "https://example.com/article1",
+      "title": "Sample OSINT Article",
+      "content": "This is a sample article content collected by Huginn for testing purposes.",
+      "timestamp": "2025-10-31T11:30:00Z",
+      "metadata": {
+        "author": "John Doe",
+        "tags": ["osint", "intelligence", "sample"],
+        "relevance_score": 0.85
+      }
+    },
+    {
+      "type": "social",
+      "platform": "twitter",
+      "url": "https://twitter.com/example/status/123",
+      "content": "Sample tweet content for OSINT analysis.",
+      "timestamp": "2025-10-31T10:15:00Z",
+      "metadata": {
+        "author": "@example_user",
+        "engagement": {
+          "likes": 42,
+          "retweets": 15,
+          "replies": 8
+        }
+      }
+    },
+    {
+      "type": "web",
+      "url": "https://example.com/blog/post",
+      "title": "Another Sample Source",
+      "content": "Additional sample content for demonstrating the analysis pipeline.",
+      "timestamp": "2025-10-31T09:00:00Z",
+      "metadata": {
+        "author": "Jane Smith",
+        "tags": ["security", "research"],
+        "relevance_score": 0.72
+      }
+    }
+  ],
+  "metadata": {
+    "total_sources": 3,
+    "collection_duration_seconds": 300,
+    "status": "complete",
+    "huginn_version": "1.0.0"
+  }
+}

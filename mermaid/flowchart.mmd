@@ -1,0 +1,63 @@
+flowchart TB
+classDef dir fill:#eef,stroke:#99c,stroke-width:1px;
+d__["muninn/"]:::dir
+f__gitignore[".gitignore"]
+f__mermaidignore[".mermaidignore"]
+d_config["config/"]:::dir
+f_config_config_yaml["config.yaml"]
+d_data["data/"]:::dir
+d_data_input["input/"]:::dir
+f_data_input__gitkeep[".gitkeep"]
+f_data_input_sample_huginn_output_json["sample_huginn_output.json"]
+d_data_output["output/"]:::dir
+f_data_output__gitkeep[".gitkeep"]
+d_mermaid["mermaid/"]:::dir
+f_mermaid_architecture_mmd["architecture.mmd"]
+f_mermaid_bpmnish_mmd["bpmnish.mmd"]
+f_mermaid_ci_sequence_mmd["ci-sequence.mmd"]
+f_mermaid_er_mmd["er.mmd"]
+f_mermaid_flowchart_mmd["flowchart.mmd"]
+f_README_md["README.md"]
+f_requirements_txt["requirements.txt"]
+d_scripts["scripts/"]:::dir
+f_scripts_generate_mermaid_mjs["generate-mermaid.mjs"]
+f_setup_py["setup.py"]
+d_src["src/"]:::dir
+d_src_muninn["muninn/"]:::dir
+f_src_muninn___init___py["__init__.py"]
+f_src_muninn_analyze_py["analyze.py"]
+f_src_muninn_data_loader_py["data_loader.py"]
+f_src_muninn_report_generator_py["report_generator.py"]
+f_src_muninn_summarizer_py["summarizer.py"]
+d_tests["tests/"]:::dir
+f_tests_test_analyze_py["test_analyze.py"]
+d__ --> f__gitignore
+d__ --> f__mermaidignore
+d__ --> d_config
+d_config --> f_config_config_yaml
+d__ --> d_data
+d_data --> d_data_input
+d_data_input --> f_data_input__gitkeep
+d_data_input --> f_data_input_sample_huginn_output_json
+d_data --> d_data_output
+d_data_output --> f_data_output__gitkeep
+d__ --> d_mermaid
+d_mermaid --> f_mermaid_architecture_mmd
+d_mermaid --> f_mermaid_bpmnish_mmd
+d_mermaid --> f_mermaid_ci_sequence_mmd
+d_mermaid --> f_mermaid_er_mmd
+d_mermaid --> f_mermaid_flowchart_mmd
+d__ --> f_README_md
+d__ --> f_requirements_txt
+d__ --> d_scripts
+d_scripts --> f_scripts_generate_mermaid_mjs
+d__ --> f_setup_py
+d__ --> d_src
+d_src --> d_src_muninn
+d_src_muninn --> f_src_muninn___init___py
+d_src_muninn --> f_src_muninn_analyze_py
+d_src_muninn --> f_src_muninn_data_loader_py
+d_src_muninn --> f_src_muninn_report_generator_py
+d_src_muninn --> f_src_muninn_summarizer_py
+d__ --> d_tests
+d_tests --> f_tests_test_analyze_py

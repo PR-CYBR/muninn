@@ -152,8 +152,7 @@ async function buildER() {
   const sqlFiles = (await collectByExt([".sql"])).filter(f => /schema|migrat|ddl|create/i.test(f));
   const sql = (await Promise.all(sqlFiles.map(read))).join("\n");
   const ct = /create\s+table\s+["`]?([A-Za-z0-9_]+)["`]?[\s\S]*?\(([\s\S]*?)\)\s*;/ig;
-  let m;
-  while ((m = ct.exec(sql))) {
+  for (const m of sql.matchAll(ct)) {
     const t = m[1];
     const body = m[2];
     const attrs = [];
@@ -170,8 +169,7 @@ async function buildER() {
   const prisma = await read(path.join(root, "prisma", "schema.prisma"));
   if (prisma) {
     const pm = /model\s+([A-Za-z0-9_]+)\s*\{([\s\S]*?)\}/g;
-    let g;
-    while ((g = pm.exec(prisma))) {
+    for (const g of prisma.matchAll(pm)) {
       const t = g[1], body = g[2];
       const attrs = tables.get(t) || [];
       body.split(/\r?\n/).forEach(line => {
@@ -283,7 +281,7 @@ async function buildArchitecture() {
         else if (e.name.endsWith(".tf")) {
           const text = await read(p);
           const re = /resource\s+"([^"]+)"\s+"([^"]+)"/g;
-          let m; while ((m = re.exec(text))) out.push({ type: m[1], name: m[2] });
+          for (const m of text.matchAll(re)) out.push({ type: m[1], name: m[2] });
         }
       }
     }

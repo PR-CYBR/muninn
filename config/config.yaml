@@ -1,0 +1,92 @@
+# Muninn - OSINT Analysis Engine Configuration
+
+# AI Model Settings
+model:
+  # Type of AI model to use: ollama, gpt4all, huggingface, openai
+  type: ollama
+  
+  # Model name/path
+  name: llama2
+  
+  # Model parameters
+  temperature: 0.7
+  max_tokens: 2000
+  
+  # API settings (if using API-based models)
+  api_key: ""
+  api_url: "http://localhost:11434"
+
+# Data Processing
+data:
+  # Input data location
+  input_dir: "data/input"
+  
+  # Output reports location
+  output_dir: "data/output"
+  
+  # Maximum sources to process
+  max_sources: 1000
+  
+  # Data validation
+  validate_schema: true
+
+# Analysis Settings
+analysis:
+  # Enable different analysis modules
+  sentiment_analysis: true
+  entity_extraction: true
+  theme_identification: true
+  
+  # Confidence threshold for findings (0.0 - 1.0)
+  confidence_threshold: 0.6
+  
+  # Maximum key findings to extract
+  max_key_findings: 10
+
+# Report Generation
+report:
+  # Template to use: default, detailed, executive
+  template: default
+  
+  # Include sections
+  include_executive_summary: true
+  include_key_findings: true
+  include_detailed_analysis: true
+  include_sources: true
+  include_recommendations: true
+  
+  # Format options
+  format: markdown
+  include_metadata: true
+  include_timestamps: true
+
+# Logging
+logging:
+  level: INFO  # DEBUG, INFO, WARNING, ERROR, CRITICAL
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "logs/muninn.log"
+
+# Integration Settings
+integration:
+  # Huginn settings
+  huginn:
+    data_format: json
+    expected_schema_version: "1.0"
+  
+  # RavenNet settings
+  ravennet:
+    publish_endpoint: ""
+    api_key: ""
+    auto_publish: false
+
+# Performance
+performance:
+  # Number of worker threads for parallel processing
+  workers: 4
+  
+  # Batch size for processing
+  batch_size: 10
+  
+  # Cache settings
+  enable_cache: true
+  cache_dir: ".cache"

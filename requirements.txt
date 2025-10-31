@@ -1,0 +1,35 @@
+# Muninn - OSINT Analysis Engine
+# Python Package Requirements
+
+# Core dependencies
+pyyaml>=6.0.1
+
+# Phase 2 dependencies (commented out for Phase 1)
+# These will be enabled in Phase 2 when implementing AI integration
+
+# AI/ML Models (uncomment based on chosen model in Phase 2)
+# ollama-python>=0.1.0          # For Ollama integration
+# gpt4all>=2.0.0                # For GPT4All integration
+# transformers>=4.30.0          # For Hugging Face models
+# torch>=2.0.0                  # PyTorch for model inference
+# openai>=1.0.0                 # For OpenAI API (if used)
+
+# NLP and Text Processing
+# nltk>=3.8.0                   # Natural Language Toolkit
+# spacy>=3.5.0                  # Industrial-strength NLP
+# textblob>=0.17.0              # Simple text processing
+
+# Data Processing
+# pandas>=2.0.0                 # Data manipulation
+# numpy>=1.24.0                 # Numerical computing
+
+# Utilities
+# python-dateutil>=2.8.0        # Date utilities
+# requests>=2.31.0              # HTTP library
+
+# Development dependencies
+# pytest>=7.4.0                 # Testing framework
+# pytest-cov>=4.1.0             # Coverage plugin
+# black>=23.0.0                 # Code formatter
+# flake8>=6.0.0                 # Linting
+# mypy>=1.4.0                   # Type checking
